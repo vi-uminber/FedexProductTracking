@@ -12,7 +12,7 @@ const TrackOrder = () => {
         async function getTrackingDetails(){
             try {
 
-                const trackingDetails = await axios.post("http://localhost:4000/fedex/track", {trackingNumber})
+                const trackingDetails = await axios.post(`${import.meta.env.VITE_APP_SERVER_API}/fedex/track`, {trackingNumber})
                 setOrderData(trackingDetails.data)
                 setLoading(false)
                 
